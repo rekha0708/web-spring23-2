@@ -66,3 +66,21 @@ console.log(customPop(myArray)); // Output: 4 (popped item)
 console.log(myArray); // Output: [1, 2, 3]
 
 //-----------------------------------------------------------------------------------------------------------
+
+Array.prototype.customReduce = function (callbackfn, initialValue) {
+    const originalArray = this;
+    let accumulator = initialValue;
+
+    for (let i = 0; i < originalArray.length; i++) {
+        accumulator = callbackfn(accumulator, originalArray[i], i, originalArray);
+    }
+
+    return accumulator;
+};
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sumFromCustomReduce = numbers.customReduce(function (accumulator, currentValue) {
+    return accumulator + currentValue;
+}, 0);
+
+console.log(sumFromCustomReduce); // 55
