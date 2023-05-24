@@ -40,4 +40,25 @@ function getDateDiscount(date) {
 
  // ----------------------------------------------------------------------------------------------------------------------------------
 
- 
+ function calculateProfit(stockPrices) {
+  
+    let maxProfit = 0;
+  
+    for (let i = 0; i < stockPrices.length ; i++) {
+      for (let j = i + 1; j < stockPrices.length; j++) {
+        const buyPrice = stockPrices[i];
+        const sellPrice = stockPrices[j];
+        const profit = sellPrice - buyPrice;
+  
+        if (profit > maxProfit) {
+          maxProfit = profit;
+        }
+      }
+    }
+  
+    return maxProfit;
+  }
+  
+  const stockPrices = [315, 50, 314, 684, 100, 648, 132, 50, 98, 45];
+  const maxProfit = calculateProfit(stockPrices);
+  console.log(maxProfit);
