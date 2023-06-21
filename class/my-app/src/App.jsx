@@ -2,6 +2,7 @@ import { Component } from "react";
 import "./App.css";
 import ClockA from "./ClockA";
 import Homework1 from "./Homework1";
+import Palindrome from "./Palindrome";
 
 class App extends Component {
 	constructor(props) {
@@ -29,6 +30,7 @@ class App extends Component {
         <Homework1/>
 				{this.state.showClockA ? <ClockA /> : null}
 				<button onClick={this.handleToggleClockA}>Toggle ClockA</button>
+        <Palindrome/>
 			</div>
 		);
 	}
