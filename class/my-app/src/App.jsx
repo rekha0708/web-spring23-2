@@ -1,8 +1,9 @@
 import { Component } from "react";
 import "./App.css";
-import ClockA from "./ClockA";
 import Homework1 from "./Homework1";
-import Palindrome from "./Palindrome";
+import PalindromeB from "./PalindromeB";
+import Clock1 from "./Clock1";
+
 
 class App extends Component {
 	constructor(props) {
@@ -28,9 +29,11 @@ class App extends Component {
 		return (
 			<div>
         <Homework1/>
-				{this.state.showClockA ? <ClockA /> : null}
+				{/*{this.state.showClockA ? <ClockA /> : null}*/}
+        {this.state.showClockA ? <Clock1 /> : null}
 				<button onClick={this.handleToggleClockA}>Toggle ClockA</button>
-        <Palindrome/>
+        {/*<Palindrome/>*/}
+        <PalindromeB/>
 			</div>
 		);
 	}
