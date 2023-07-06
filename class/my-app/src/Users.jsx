@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+//import React, { useEffect, useState } from "react";
+//import axios from "axios";
+import useUserFetch from "./hooks/useUserFetch";
 
-const Users = () => {
+/*const Users = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -15,7 +16,13 @@ const Users = () => {
     };
 
     fetchUsers();
-  }, []);
+  }, []);*/
+
+  const Users = () => {
+
+    const url = "https://jsonplaceholder.typicode.com/users"
+
+    const {users} = useUserFetch(url);
 
   return (
     <div>
